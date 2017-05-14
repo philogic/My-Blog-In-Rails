@@ -1,24 +1,15 @@
-<% if @article.errors.any? %>
-    <h2>The following errors prevented the article from being created:</h2>
-    <ul>
-      <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-      <% end %>
-    </ul>
-<% end %>
 
-<%= form_for @article do |f| %>
-    <p>
-      <%= f.label :title %><br/>
-      <%= f.text_field :title %>
-    </p>
-    <p>
-      <%= f.label :description %><br/>
-      <%= f.text_area :description %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
-<% end %>
 
-<p><%= link_to 'Back to articles listing', articles_path %></p>
+<%= simple_form_for @article, html: { class: 'form-horizontal' }, wrapper: :horizontal_form  do |f| %>
+
+    <%= f.error_notification %>
+
+    <%= f.input :title, placeholder: 'Put your title here' %>
+
+    <%= f.input :description, input_html: {rows: 10}, placeholder: 'Put your description here' %>
+
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.button :submit, class: 'btn btn-primary btn-lg' %>
+      <%= link_to 'Cancel', :back, {:class=>"btn btn-danger btn-lg"} %>
+    </div>
+<% end %>
