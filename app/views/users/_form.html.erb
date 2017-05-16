@@ -1,0 +1,19 @@
+<%= simple_form_for @user, html: { class: 'form-horizontal' }, wrapper: :horizontal_form  do |f| %>
+
+    <%= f.error_notification %>
+
+    <%= f.input :username, placeholder: 'Put your username here' %>
+
+    <%= f.input :email, placeholder: 'user@example.com' %>
+
+    <%= f.input :password %>
+
+    <div class="col-sm-offset-2 col-sm-10">
+      <% if @user.new_record? %>
+          <%= f.button :submit, "Sign Up", class: 'btn btn-primary btn-lg' %>
+      <% else %>
+          <%= f.button :submit, "Edit your account", class: 'btn btn-primary btn-lg' %>
+      <% end %>
+      <%= link_to 'Cancel', :back, {:class=>"btn btn-danger btn-lg"} %>
+    </div>
+<% end %>

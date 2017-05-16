@@ -1,17 +1,3 @@
 <h1 align="center">Sign up for Alpha Blog</h1>
 
-<%= simple_form_for @user, html: { class: 'form-horizontal' }, wrapper: :horizontal_form  do |f| %>
-
-    <%= f.error_notification %>
-
-    <%= f.input :username, placeholder: 'Put your username here' %>
-
-    <%= f.input :email, placeholder: 'user@example.com' %>
-
-    <%= f.input :password %>
-
-    <div class="col-sm-offset-2 col-sm-10">
-      <%= f.button :submit, "Sign Up", class: 'btn btn-primary btn-lg' %>
-      <%= link_to 'Cancel', :back, {:class=>"btn btn-danger btn-lg"} %>
-    </div>
-<% end %>
+<%= render 'form' %>
