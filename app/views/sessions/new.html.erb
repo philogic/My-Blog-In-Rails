@@ -1,0 +1,17 @@
+<h1 align="center">Log In</h1>
+
+<%= simple_form_for(:session, html: { class: 'form-horizontal' }, wrapper: :horizontal_form, url: login_path ) do |f| %>
+
+    <%= f.error_notification %>
+
+    <%= f.input :email, placeholder: 'user@example.com' %>
+
+    <%= f.input :password %>
+
+    <div class="col-sm-offset-2 col-sm-10">
+
+      <%= f.button :submit, "Log In", class: 'btn btn-primary btn-lg' %>
+
+      <%= link_to 'Cancel', :back, {:class=>"btn btn-danger btn-lg"} %>
+    </div>
+<% end %>

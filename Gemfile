@@ -34,8 +34,16 @@ gem 'bootstrap-will_paginate', '0.0.10'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :development do
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
+end
+
+gem 'puma'
+
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
@@ -50,8 +58,4 @@ group :development, :test do
   gem 'spring'
 end
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
 
