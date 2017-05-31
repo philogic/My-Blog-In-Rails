@@ -1,0 +1,11 @@
+<%= simple_form_for @category, html: { class: 'form-horizontal' }, wrapper: :horizontal_form  do |f| %>
+
+    <%= f.error_notification %>
+
+    <%= f.input :name, placeholder: 'Put your category name here' %>
+
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.button :submit, "Add Category", class: 'btn btn-primary btn-lg' %>
+      <%= link_to 'Cancel', :back, {:class=>"btn btn-danger btn-lg"} %>
+    </div>
+<% end %>
