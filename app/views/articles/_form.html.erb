@@ -6,6 +6,10 @@
 
     <%= f.input :description, input_html: {rows: 10}, placeholder: 'Put your description here' %>
 
+    <div id="association-form">
+      <%= f.association :categories, as: :check_boxes, label_method: :name, label: 'Category' %>
+    </div>
+
     <div class="col-sm-offset-2 col-sm-10">
       <%= f.button :submit, class: 'btn btn-primary btn-lg' %>
       <%= link_to 'Cancel', :back, {:class=>"btn btn-danger btn-lg"} %>
