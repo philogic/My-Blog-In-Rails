@@ -1,1 +1,10 @@
-This is the repository for my first alpha blog.
+A blog with admin, basic authentication (made from scratch),
+pagination and categories functionalities.
+
+Technology stack:
+
+Ruby 2.2.3
+Rails 4.2.2
+Bootstrap-Sass 3.1
+BCrypt 3.1.7
+Will Paginate 3.0
